@@ -1,0 +1,7 @@
+# Please write a DELETE statement and DO NOT write a SELECT statement.
+# Write your MySQL query statement below
+DELETE FROM Person WHERE id NOT IN 
+(SELECT * FROM 
+    (SELECT MIN(id) FROM Person GROUP BY email) AS A)
+    
+#SELECT * FROM (CONDITION) AS A (TEMP) CODE IS BECAUSE WE NEED TO NESTED IT TWICE BCOZ CANNOT MODIFY SAME TABLE WHEN WE USE SELECT PART
